@@ -1,15 +1,14 @@
 import "../styles/card.css"
 
-export default function Card({ cards }) {
+export default function Card({ cards, clickHandler }) {
   // to shuffle the cards
-  const shuffledCards = shuffle(cards)
+  const shuffledCards = shuffle(cards);
 
   // to take the first 12 cards
-  const firstTwelve = shuffledCards.filter((card, index) => index < 12)
+  const firstTwelve = shuffledCards.filter((card, index) => index < 12);
 
-// 
   const cardsList = firstTwelve.map((card) => {
-    return <img src={card} key={card} />;
+    return <img src={card} key={card} onClick={clickHandler} />;
   });
   return <div id="cards">{cardsList}</div>;
 }

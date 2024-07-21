@@ -19,6 +19,9 @@ function App() {
   const [giantSoldier, setGiantSoldier] = useState();
   const [kuriboh, setKuriboh] = useState();
   const [wingedKuriboh, setWingedKuriboh] = useState();
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [clickedCards, setClickedCards] = useState([]);
 
   useEffect(() => {
     const fetchData = async (cardName, setCard) => {
@@ -67,6 +70,21 @@ function App() {
     wingedKuriboh,
   ];
 
+  function handleClick(e) {
+    const chosenCard = e.target.src;
+    if (clickedCards.includes(chosenCard)) {
+      alert(`Good luck next time, you scored ${score}`);
+      if (bestScore < score) {
+        setBestScore(score);
+      }
+      setScore(0);
+      setClickedCards([])
+    } else {
+      setClickedCards([...clickedCards, e.target.src]);
+      setScore(score + 1);
+    }
+  }
+
   return (
     <div id="app">
       <header>
@@ -78,13 +96,13 @@ function App() {
           </h2>
         </div>
         <div>
-          <h2>Score: 0</h2>
-          <h2>Best score: 0</h2>
+          <h2>Score: {score}</h2>
+          <h2>Best score: {bestScore}</h2>
         </div>
       </header>
-      <Card cards={cards} />
+      <Card cards={cards} clickHandler={handleClick} />
     </div>
   );
 }
- 
+
 export default App;
