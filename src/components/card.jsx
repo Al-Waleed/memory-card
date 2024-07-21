@@ -1,3 +1,5 @@
+import "../styles/card.css"
+
 export default function Card({ cards }) {
   // to shuffle the cards
   const shuffledCards = shuffle(cards)

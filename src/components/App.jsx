@@ -68,14 +68,14 @@ function App() {
   ];
 
   return (
-    <>
+    <div id="app">
       <h1>Memory Game</h1>
       <h2>
         Get points by clicking on an image but do not click on any more than
         once!
       </h2>
       <Card cards={cards} />
-    </>
+    </div>
   );
 }
 
