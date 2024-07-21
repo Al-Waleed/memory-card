@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Card from "./card";
 import "../styles/App.css";
 
 function App() {
@@ -47,6 +48,25 @@ function App() {
     fetchData("Winged Kuriboh", setWingedKuriboh);
   }, []);
 
+  const cards = [
+    darkMagician,
+    darkMagicianGirl,
+    babyDragon,
+    blueEyesDragon,
+    obelisk,
+    slifer,
+    raDragon,
+    morphingJar,
+    timeWizard,
+    gaia,
+    swords,
+    curseOfDragon,
+    summonedSkull,
+    giantSoldier,
+    kuriboh,
+    wingedKuriboh,
+  ];
+
   return (
     <>
       <h1>Memory Game</h1>
@@ -54,22 +74,7 @@ function App() {
         Get points by clicking on an image but do not click on any more than
         once!
       </h2>
-      <img src={darkMagician} alt="" />
-      <img src={darkMagicianGirl} alt="" />
-      <img src={babyDragon} alt="" />
-      <img src={blueEyesDragon} alt="" />
-      <img src={obelisk} alt="" />
-      <img src={slifer} alt="" />
-      <img src={raDragon} alt="" />
-      <img src={morphingJar} alt="" />
-      <img src={timeWizard} alt="" />
-      <img src={gaia} alt="" />
-      <img src={swords} alt="" />
-      <img src={curseOfDragon} alt="" />  
-      <img src={summonedSkull} alt="" />
-      <img src={giantSoldier} alt="" />
-      <img src={kuriboh} alt="" />
-      <img src={wingedKuriboh} alt="" />
+      <Card cards={cards} />
     </>
   );
 }
