@@ -69,14 +69,22 @@ function App() {
 
   return (
     <div id="app">
-      <h1>Memory Game</h1>
-      <h2>
-        Get points by clicking on an image but do not click on any more than
-        once!
-      </h2>
+      <header>
+        <div>
+          <h1>Memory Game</h1>
+          <h2>
+            Get points by clicking on an image but do not click on any more than
+            once!
+          </h2>
+        </div>
+        <div>
+          <h2>Score: 0</h2>
+          <h2>Best score: 0</h2>
+        </div>
+      </header>
       <Card cards={cards} />
     </div>
   );
 }
-
+ 
 export default App;

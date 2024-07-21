@@ -19,3 +19,8 @@ html, body{
 h1, h2{
   color: wheat;
 }
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
